@@ -1,0 +1,24 @@
+[nz-form] {
+  max-width: 600px;
+}
+
+button {
+  margin-left: 8px;
+}
+
+[nz-card].ant-card {
+  margin: 0 auto !important;
+}
+
+.ant-card-hoverable {
+  cursor: default;
+  margin: 0 auto;
+}
+
+.ant-card img {
+  height: 5rem;
+}
+
+.ant-form-item {
+  margin: 0 0 3px;
+}

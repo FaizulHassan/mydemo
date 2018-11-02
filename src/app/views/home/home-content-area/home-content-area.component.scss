@@ -1,0 +1,31 @@
+
+div.home-content {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 5%;
+  font-size: 16px;
+}
+
+div.home-content h4{
+  cursor: default;
+  user-select: none;
+}
+
+div.home-content h4:after {
+  display: inline-block;
+  margin: 0 0 8px 20px;
+  height: 3px;
+  content: " ";
+  text-shadow: none;
+  background-color: #999;
+  width: 140px;
+}
+
+div.home-content h4:before {
+  display: inline-block;
+  margin: 0 20px 8px 0;
+  height: 3px;
+  content: " ";
+  text-shadow: none;
+  background-color: #999;
+  width: 140px;
+}

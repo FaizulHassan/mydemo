@@ -1,0 +1,53 @@
+<app-header></app-header>
+
+<br/><br/>
+
+<nz-card nzHoverable style="width:50%" [nzCover]="registerTemplate">
+  <nz-card-meta nzTitle="Login" nzDescription="Key in your credentials to log into blockchain network" class="text-center">
+  </nz-card-meta>
+  <br />
+
+  <form nz-form [formGroup]="validateForm" (ngSubmit)="submitForm($event,validateForm.value)">
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>E-mail</nz-form-label>
+      <nz-form-control [nzSpan]="12" nzHasFeedback>
+        <input nz-input formControlName="email" placeholder="email" type="email">
+        <nz-form-explain *ngIf="validateForm.get('email').dirty&&validateForm.get('email').errors">
+          <ng-container *ngIf="validateForm.get('email').hasError('email')">
+            The input is not valid E-mail!
+          </ng-container>
+          <ng-container *ngIf="validateForm.get('email').hasError('required')">
+            Please input your E-mail!
+          </ng-container>
+        </nz-form-explain>
+      </nz-form-control>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-label [nzSpan]="7" nzRequired>Password</nz-form-label>
+      <div>
+        <nz-form-control [nzSpan]="12" nzHasFeedback>
+          <input nz-input type="password" formControlName="password" placeholder="password">
+          <nz-form-explain *ngIf="validateForm.get('password').dirty&&validateForm.get('password').hasError('required')">Please input your password!
+          </nz-form-explain>
+        </nz-form-control>
+      </div>
+    </nz-form-item>
+
+    <nz-form-item>
+      <nz-form-control [nzOffset]="7" [nzSpan]="12">
+        <button nz-button nzType="primary" [disabled]="!validateForm.valid">Submit</button>
+        &nbsp;&nbsp;
+      </nz-form-control>
+    </nz-form-item>
+  </form>
+
+  <div class="alert alert-danger text-center" *ngIf="errorFlag">
+    {{errorMessage}}
+  </div>
+
+</nz-card>
+
+<ng-template #registerTemplate>
+  <img alt="register" />
+</ng-template>

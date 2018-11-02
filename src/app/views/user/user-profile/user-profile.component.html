@@ -1,0 +1,32 @@
+<!-- <app-header></app-header> -->
+
+<br/><br/>
+
+<nz-card>
+  <nz-card-meta nzTitle="Account Details" class="text-center"></nz-card-meta>
+  <br/>
+  
+  <div>
+    <nz-table #userAccount [nzData]="userDetails" nzSize="small">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Role Chosen</th>
+          <th>Comments</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr *ngFor="let data of userAccount.data">
+          <td>{{data._id}}</td>
+          <td>{{data.username}}</td>
+          <td>{{data.email}}</td>
+          <td>{{data.role}}</td>
+          <td>{{data.comment}}</td>
+        </tr>
+      </tbody>
+    </nz-table>
+  </div>
+</nz-card>
